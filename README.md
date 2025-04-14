@@ -169,10 +169,7 @@ In the `sidecar-pod.yaml` configuration:
    - The sidecar container reads from this same file in real-time using `tail -f`
    - Changes to the log file are immediately visible to the sidecar container
 
-4. **Benefits**:
-   - Separation of concerns: Application logic in the main container, log processing in the sidecar
-   - The sidecar container can be updated independently of the main application
-   - This pattern enables centralized log processing, filtering, or forwarding to external systems
+
 
 ## Step 6: Document the Required kubectl Commands (For Question 3)
 
@@ -202,27 +199,4 @@ kubectl describe pod nginx-pod
 
 This command provides detailed information about the specified pod, including events, conditions, container statuses, and configuration details.
 
-## Step 7: Clean Up Resources (Optional)
 
-When you're done with testing, you can remove the pods:
-
-```
-kubectl delete pod nginx-pod
-kubectl delete pod app-with-sidecar
-```
-
-## Additional Tips
-
-- If you encounter issues with pod creation, check your YAML syntax and indentation
-- Use `kubectl get events` to see cluster events that might help troubleshoot problems
-- For more information on specific kubectl commands, use `kubectl <command> --help`
-
-## Conclusion
-
-By completing these steps, you will have successfully:
-
-1. Created a Nginx web server Pod definition
-2. Designed a Pod with a main container and logging sidecar that share a volume
-3. Learned and demonstrated essential kubectl commands
-
-Remember to take screenshots of your terminal commands and their outputs for documentation in your assignment submission.
